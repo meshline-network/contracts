@@ -1,0 +1,8 @@
+<Project>
+  <PropertyGroup>
+    <Authors>NEO GLOBAL RESOURCES</Authors>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Neo" Version="3.9.1" />
+    <PackageReference Include="xunit.v3.mtp-v2" Version="3.2.2" />
+    <ProjectReference Include="../../src/Meshline.Contracts/Meshline.Contracts.csproj" ReferenceOutputAssembly="false" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="../../src/Meshline.Contracts/bin/sc/MeshlineRegistry.nef" Link="contract/MeshlineRegistry.nef" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../../src/Meshline.Contracts/bin/sc/MeshlineRegistry.manifest.json" Link="contract/MeshlineRegistry.manifest.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

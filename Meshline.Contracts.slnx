@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Meshline.Contracts/Meshline.Contracts.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Meshline.Contracts.Tests/Meshline.Contracts.Tests.csproj" />
+  </Folder>
+</Solution>

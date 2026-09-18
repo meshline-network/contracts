@@ -1,0 +1,30 @@
+name: Contracts
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contracts:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-dotnet@v5
+        with:
+          global-json-file: global.json
+      - name: Restore compiler
+        run: dotnet tool restore
+      - name: Restore dependencies
+        run: dotnet restore Meshline.Contracts.slnx
+      - name: Build
+        run: dotnet build Meshline.Contracts.slnx --configuration Release --no-restore -p:ContinuousIntegrationBuild=true
+      - name: Test
+        run: dotnet test --project tests/Meshline.Contracts.Tests/Meshline.Contracts.Tests.csproj --configuration Release --no-build --no-restore

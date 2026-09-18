@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<ImplicitUsings>false</ImplicitUsings>
+		<Nullable>disable</Nullable>
+		<RootNamespace>Meshline.Contracts</RootNamespace>
+		<CompileNeoContract Condition="'$(CompileNeoContract)' == ''">true</CompileNeoContract>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Neo.SmartContract.Framework" Version="[3.9.1]" />
+	</ItemGroup>
+
+	<Target Name="CompileNeoContract"
+	        AfterTargets="Build"
+	        Condition="'$(CompileNeoContract)' == 'true'">
+		<Message Text="Start NeoContract converter, Source File: $(MSBuildProjectFullPath)" Importance="high">
+		</Message>
+		<Exec Command="dotnet tool run nccs -- &quot;$(MSBuildProjectFullPath)&quot; -o &quot;$(MSBuildProjectDirectory)/bin/sc&quot; --base-name MeshlineRegistry" />
+	</Target>
+
+</Project>
