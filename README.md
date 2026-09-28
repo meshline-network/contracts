@@ -5,6 +5,18 @@ Neo N3 reference contracts for the [Meshline Protocol](https://github.com/meshli
 status. The [Registry specification](https://github.com/meshline-network/protocol/blob/main/v1/en/registry/README.md)
 defines the interoperable data and interfaces.
 
+## Use the Registry
+
+Use the [ABI reference](docs/abi.md) to read relay records and call contract methods.
+For deploying a Registry, registering relays, or managing an existing deployment,
+follow the [operations guide](docs/operations.md).
+
+For application integration, see the [Meshline SDKs](https://github.com/meshline-network/sdk)
+for available implementations, setup instructions, and examples.
+
+The [Meshline website](https://meshline.org/en/resources) links to the protocol,
+SDK, and reference contracts.
+
 ## Build and test
 
 Install .NET SDK **10.0.401**, as specified in [global.json](global.json), then run
