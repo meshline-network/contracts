@@ -15,7 +15,9 @@ For application integration, see the [Meshline SDKs](https://github.com/meshline
 for available implementations, setup instructions, and examples.
 
 The [Meshline website](https://meshline.org/en/resources) links to the protocol,
-SDK, and reference contracts.
+SDKs, CLI, and reference contracts. To discover registered relays from a terminal,
+use the [Meshline CLI](https://github.com/meshline-network/client) and its
+[relay commands](https://github.com/meshline-network/client/blob/main/docs/commands.md#relays-list).
 
 ## Build and test
 
